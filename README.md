@@ -21,9 +21,9 @@ I have tested on:
 
 ![avatar](/custom_data/test_recon/final_rec.jpg)
 
-### Test images, reconstructions, as well as the auxiliary data we used in our paper are available in folder "custom_data".
+## Test images, reconstructions, as well as the auxiliary data we used in our paper are available in folder "custom_data".
 
-## It is easy to test on more settings, just need to adjust the variables as well as the training data in "custom_data".
+## It is easy to test on more settings, just need to adjust the corresponding variables as well as the training data in "custom_data".
 
 # Note
 
