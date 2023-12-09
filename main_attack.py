@@ -37,7 +37,7 @@ if __name__ == '__main__':
     if not os.path.exists(cfg.attack.save_dir):
         os.mkdir(cfg.attack.save_dir)
 
-    cus_data = CustomData(data_dir='custom_data/test_victim_data/', dataset_name='ImageNet', number_data_points=cfg.case.user.num_data_points)
+    cus_data = CustomData(data_dir='custom_data/victim_data/', dataset_name='ImageNet', number_data_points=cfg.case.user.num_data_points)
     shared_data, true_user_data = user.compute_local_updates(server_payload, custom_data=cus_data.process_data())
     true_pat = cfg.attack.save_dir + 'a_truth.jpg'
     cus_data.save_recover(true_user_data, save_pth=true_pat)
