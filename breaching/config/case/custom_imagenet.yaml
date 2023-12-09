@@ -1,0 +1,17 @@
+name: custom_imagenet
+
+defaults:
+  - data: ImageNet
+  - impl: default
+  - server: honest-but-curious
+  - user: local_gradient
+  - _self_
+model: ResNet18
+no_dropout: True
+
+user:
+  provide_labels: False
+  num_data_points: 8
+
+# Server and user:
+num_queries: 1
