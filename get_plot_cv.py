@@ -18,7 +18,7 @@ if __name__ == "__main__":
     pretrained = True
     model = getattr(torchvision.models, model_name)(pretrained=pretrained)
     model.eval()
-    cus_data = CustomData(data_dir='custom_data/web_image_224/', dataset_name='ImageNet', case='12_custom_imagenet')
+    cus_data = CustomData(data_dir='custom_data/web_image_224/', dataset_name='ImageNet', number_data_points=40)
     inputs = cus_data.process_data()['inputs']
 
     feature = []
