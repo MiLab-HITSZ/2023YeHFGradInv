@@ -10,7 +10,7 @@ from custom_dataset import CustomData
 import breaching
 
 def get_shared():
-    cfg = breaching.get_config(overrides=["case=12_custom_imagenet", "attack=our_res34_pretrained"])
+    cfg = breaching.get_config(overrides=["case=custom_imagenet", "attack=our_res34_pretrained"])
 
     device = torch.device(f'cuda') if torch.cuda.is_available() else torch.device('cpu')
     torch.backends.cudnn.benchmark = cfg.case.impl.benchmark
@@ -40,7 +40,7 @@ def get_shared():
 
     server_payload = server.distribute_payload()
 
-    cus_data = CustomData(data_dir='custom_data/aweb_img/', dataset_name='ImageNet', case='12_custom_imagenet', mix=cfg.case.data.mix, only_mix=only_mix)
+    cus_data = CustomData(data_dir='custom_data/aweb_img/', dataset_name='ImageNet', number_data_points=cfg.case.user.num_data_points, mix=cfg.case.data.mix, only_mix=only_mix)
     shared_data, true_user_data = user.compute_local_updates(server_payload, custom_data=cus_data.process_data())
     return shared_data, true_user_data
 
