@@ -125,7 +125,7 @@ def get_labels(shared_data, num_data_points, n_pop, iters):
     g_fc = shared_data["gradients"][-2].cpu()
     g_mean = g_fc.mean(dim=1)
     label_list = []
-    for i in range(1000):
+    for i in range(g_mean.shape[0]):
         if g_mean[i] < 0:
             label_list.append(i)
     g_cut = g_fc[label_list]
